@@ -15,8 +15,8 @@ export default function NavBar({ userImg }) {
     { name: "Home", href: "/", current: location.pathname === "/" },
     { name: "About", href: "/about", current: location.pathname === "/about" },
     {
-      name: "Api Card",
-      href: "/api-card",
+      name: "Pokemons",
+      href: "/pokemons",
       current: location.pathname === "/api-card",
     },
   ];
