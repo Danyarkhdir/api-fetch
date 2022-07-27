@@ -10,7 +10,7 @@ export default function Profile({ user }) {
           width={"200px"}
           src={user.profile}
           className=" rounded-full overflow-hidden"
-          alt="User Image"
+          alt="User"
         />
         <div className="mt-10">
           <h2 className="p-1 font-serif text-4xl font-bold flex items-center">
