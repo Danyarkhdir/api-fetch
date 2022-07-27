@@ -1,18 +1,29 @@
-export default function Profile() {
+import { BsPersonLinesFill } from "react-icons/bs";
+import { HiLocationMarker } from "react-icons/hi";
+import { MdAlternateEmail } from "react-icons/md";
+export default function Profile({ user }) {
   return (
     <div className="w-full bg-slate-400 h-screen">
       <div className="pt-12 flex flex-col items-center h-full">
         <img
-          src="https://images.unsplash.com/photo-1543599538-a6c4f6cc5c05?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1ODkxMTUyMQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400"
-          className="w-400 h-400 rounded-full overflow-hidden"
-          alt=""
+          height={"200px"}
+          width={"200px"}
+          src={user.profile}
+          className=" rounded-full overflow-hidden"
+          alt="User Image"
         />
         <div className="mt-10">
-          <h2 className="p-1 font-serif text-4xl font-extrabold">
-            Danyar Khdir{" "}
+          <h2 className="p-1 font-serif text-4xl font-bold flex items-center">
+            <BsPersonLinesFill size={"35px"} className="mr-3" />
+            {user.name}
           </h2>
-          <p className="p-1"></p>
-          <p className="p-1">Country</p>
+          <p className="p-1 flex items-center text-2xl  font-serif">
+            <MdAlternateEmail size={"30px"} className="mr-5" />
+            {user.email}
+          </p>
+          <p className="p-1 flex items-center text-2xl  font-serif">
+            <HiLocationMarker size={"30px"} className="mr-5" /> {user.country}
+          </p>
         </div>
       </div>
     </div>

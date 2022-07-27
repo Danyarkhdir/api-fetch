@@ -16,6 +16,7 @@ function App() {
           name: `${name.title} ${name.first} ${name.last}`,
           email: res.data.results[0].email,
           img: res.data.results[0].picture.thumbnail,
+          profile: res.data.results[0].picture.large,
           country: res.data.results[0].location.country,
         };
         setUser(user);
@@ -31,7 +32,7 @@ function App() {
     <div>
       <NavBar userImg={user.img} />
       <Routes>
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile user={user} />} />
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/api-card" element={<h1>Api Card</h1>} />
         <Route path="/" element={<h1>Home</h1>} />
