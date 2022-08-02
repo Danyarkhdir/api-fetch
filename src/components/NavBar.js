@@ -13,7 +13,11 @@ export default function NavBar({ userImg }) {
   const location = useLocation();
   const navigation = [
     { name: "Home", href: "/", current: location.pathname === "/" },
-    { name: "About", href: "/about", current: location.pathname === "/about" },
+    {
+      name: "Counter",
+      href: "/counter",
+      current: location.pathname === "/counter",
+    },
     {
       name: "Pokemons",
       href: "/pokemons",

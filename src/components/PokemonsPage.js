@@ -19,7 +19,7 @@ export default function PokemonsPage() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
   if (!pokemon) return <Loader />;
   return (
     <div className="mt-10 pb-8 text-center w-8/12 mx-auto border-2 border-black rounded-lg  ">
@@ -29,6 +29,9 @@ export default function PokemonsPage() {
       <ul>
         <h3 className="text-xl font-bold">Abilities of the pokemon:</h3>
         {pokemon.abilities.map((abilities, index) => {
+          const abilityName =
+            abilities.ability.name[0].toUpperCase() +
+            abilities.ability.name.slice(1);
           return (
             <li
               className="text-lg py-2 my-2 border-2 border-black w-8/12 mx-auto bg-black rounded-full text-white"
@@ -36,8 +39,10 @@ export default function PokemonsPage() {
             >
               <p className="text-xl text-yellow-500 font-bold">{`${
                 index + 1
-              }. ${abilities.ability.name}`}</p>
-              <p>url : {abilities.ability.url}</p>
+              }. ${abilityName}`}</p>
+              <a target="_blank" rel="noreferrer" href={abilities.ability.url}>
+                url : {abilities.ability.url}
+              </a>
             </li>
           );
         })}

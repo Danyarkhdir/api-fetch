@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Profile from "./components/Profile";
 import Pokemons from "./components/Pokemons";
 import PokemonsPage from "./components/PokemonsPage";
+import { Counter } from "./features/counter/Counter";
 function App() {
   const [user, setUser] = useState();
   useEffect(() => {
@@ -35,7 +36,7 @@ function App() {
       <NavBar userImg={user.img} />
       <Routes>
         <Route path="/profile" element={<Profile user={user} />} />
-        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/counter" element={<Counter />} />
         <Route path="/pokemons" element={<Pokemons />} />
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/pokemons/:id" element={<PokemonsPage />} />
